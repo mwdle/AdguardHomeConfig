@@ -24,4 +24,8 @@ Getting your modern Android device to use your Adguard Home instance as its DNS 
 ### Starting the container  
 
 In your terminal, ```cd``` to the directory containing the ```docker-compose.yml``` and ```.env``` files. Run the following command: ```docker compose up -d```  
-Your container should be up and running and your Cloudflare Dashboard configured tunnels should be live!  
+Your container should be up and running and your Adguard Home Dashboard will be accessible after you configure your reverse proxy and connect your Docker Networks accordingly!  
+
+### Disclaimer
+
+This guide is provided as-is and is intended for informational and reference purposes only. The author assumes no responsibility for any errors or omissions in the content or for any consequences that may arise from the use of the information provided. Always exercise caution and seek professional advice if necessary.
