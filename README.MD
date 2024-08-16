@@ -2,6 +2,10 @@
 
 This repository includes an example Docker Compose and .env file for running an Adguard Home instance in Docker.
 
+## Important Details
+
+The Docker Compose file assumes you have already created a Docker network called 'Adguard'. You can create a network before running the compose file by executing the following command: docker network create Adguard
+
 ## What do I use Adguard Home for?  
 
 Most people use Adguard Home to block ads, I personally can't keep up with investigating and unblocking hosts when I run into issues browsing the web caused by Adguard blocks. My home router doesn't support NAT loopback, so I use Adguard Home's DNS Rewrites feature to allow me to internally resolve and access services hosted on my.domain.com. I simply setup my devices to use Adguard Home as their DNS server, and then create a wildcard record for *.domain.com to the IP address of my reverse proxy.

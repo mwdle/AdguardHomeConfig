@@ -12,7 +12,7 @@ services:
     volumes:
       - ${DOCKER_VOLUMES}/Adguard/work:/opt/adguardhome/work
       - ${DOCKER_VOLUMES}/Adguard/config:/opt/adguardhome/conf
-
+# Assumes you have already created a Docker Network called 'Adguard' (ex 'docker network create Adguard')
 networks:
   Adguard:
     name: Adguard
