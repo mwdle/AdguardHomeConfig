@@ -1,6 +1,6 @@
 # Adguard Home Docker Compose Configuration  
 
-A sample Docker Compose and .env file for Adguard Home.  
+A sample Docker Compose file and brief advice for Adguard Home.  
 
 ## Important Details  
 
