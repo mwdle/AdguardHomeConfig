@@ -4,7 +4,7 @@ This repository includes an example Docker Compose and .env file for running an 
 
 ## Important Details
 
-The Docker Compose file assumes you have already created a Docker network called 'Adguard'. You can create a network before running the compose file by executing the following command: docker network create Adguard
+The Docker Compose file assumes you have already created a Docker network called 'Adguard'. You can create a network before starting the container by executing the following command: docker network create Adguard
 
 ## What do I use Adguard Home for?  
 
