@@ -10,7 +10,7 @@ A sample Docker Compose and .env file for Adguard Home.
 ### Starting the container  
 
 In your terminal, ```cd``` to the directory containing the ```docker-compose.yml``` and ```.env``` files. Run the following command: ```docker compose up -d```  
-Your container should be up and running and your Adguard Home Dashboard will be accessible after you configure your reverse proxy and connect your Docker Networks accordingly!  
+Your container should be up and running and your Adguard Home Dashboard will be accessible after you configure your reverse proxy and connect your Docker Networks accordingly! DNS will be available on port 53 on the host machine.  
 
 ## Trickiness with Android  
 
