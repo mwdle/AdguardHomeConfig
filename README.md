@@ -38,7 +38,7 @@ A sample Docker Compose file and brief advice for Adguard Home.
     docker compose up -d
     ```  
 
-Your container should be up and running and your Adguard Home Dashboard will be accessible after you configure your reverse proxy and connect your Docker Networks accordingly! DNS will be available on port 53 on the host machine.  
+Your container should be up and running and your Adguard Home Dashboard will be accessible on port 3000 for first time setup, and on port 80 during normal usage. DNS will be available on port 53 on the host machine. Attach your reverse proxy container to the previously created Docker Networks and configure it accordingly.  
 
 ## Trickiness with Android  
 
