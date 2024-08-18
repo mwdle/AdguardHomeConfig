@@ -2,14 +2,42 @@
 
 A sample Docker Compose file and brief advice for Adguard Home.  
 
-## Important Details  
+## Table of Contents  
 
-* The Docker Compose file assumes you have already created a Docker network called ```Adguard```. You can create a network before starting the container by executing the following command: ```docker network create Adguard```  
-* You must change the ```DOCKER_VOLUMES``` path in the ```.env``` file to a folder on your system where you wish to store container files (used in Docker Compose bind mounts).  
+* [Description](#adguard-home-docker-compose-configuration)  
+* [Getting Started](#getting-started)  
+* [Trickiness with Android](#trickiness-with-android)  
+* [What I use Adguard Home for](#what-i-use-adguard-home-for)  
+* [License](#license)  
+* [Disclaimer](#disclaimer)  
 
-## Starting the container  
+## Getting Started  
 
-In your terminal, ```cd``` to the directory containing the ```docker-compose.yml``` and ```.env``` files. Run the following command: ```docker compose up -d```  
+1. Clone the repository:  
+
+    ```shell
+    git clone https://github.com/mwdle/AdguardHomeConfig.git
+    ```  
+
+2. Change the ```.env``` file properties:  
+
+    ```properties
+    DOCKER_VOLUMES=<PATH_TO_DOCKER_VOLUMES_FOLDER> # A folder on your system to store bind mounts for Docker containers.
+    ```  
+
+3. Open a terminal in the directory containing the docker-compose file.  
+4. Create a docker network for the container:  
+
+    ```shell
+    docker network create Adguard
+    ```  
+
+5. Start the container:  
+
+    ```shell
+    docker compose up -d
+    ```  
+
 Your container should be up and running and your Adguard Home Dashboard will be accessible after you configure your reverse proxy and connect your Docker Networks accordingly! DNS will be available on port 53 on the host machine.  
 
 ## Trickiness with Android  
@@ -22,9 +50,13 @@ Getting your modern Android device to use your Adguard Home instance as its DNS 
 * ```Disable any IPv6 DNS Relay``` on your router if one exists. Disabling IPV6 entirely is also an option.  
 * If none of the above steps work, a non-ideal workaround is to use an app from the Google Play Store that connects your phone to a dummy (local) VPN that enforces the DNS settings of your choosing.  
 
-## What do I use Adguard Home for?  
+## What I use Adguard Home for  
 
-Most people use Adguard Home to block ads, I personally can't keep up with investigating and unblocking hosts when I run into issues browsing the web caused by Adguard blocks. My home router doesn't support NAT loopback, so I use Adguard Home for its DNS Rewrites feature to allow me to internally resolve and access services hosted on ```my.domain.com```. I simply setup my devices to use Adguard Home as their DNS server, and then create a wildcard record for ```*.domain.com``` to the IP address of my reverse proxy.  
+Most people use Adguard Home to block ads, I personally can't keep up with investigating and unblocking hosts when I run into issues browsing the web caused by Adguard blocks. My home router doesn't support NAT loopback, and my sites are proxied by Cloudflare so I use Adguard Home for its DNS Rewrites feature to allow me to internally resolve and access services hosted on ```my.domain.com```. This increases speeds accessing my sites on my LAN since my requests don't route through Cloudflare and back. I simply setup my devices to use Adguard Home as their DNS server, and then create a wildcard record for ```*.domain.com``` to the IP address of my reverse proxy.  
+
+## License  
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE.txt) file for details.  
 
 ## Disclaimer  
 
