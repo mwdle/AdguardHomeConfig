@@ -19,20 +19,29 @@ A sample Docker Compose file and brief advice for Adguard Home.
     git clone https://github.com/mwdle/AdguardHomeConfig.git
     ```  
 
-2. Change the ```.env``` file properties:  
+2. Create a folder on your system for Docker bind mounts / storing container files. The folder should have the following structure:  
 
-    ```properties
-    DOCKER_VOLUMES=<PATH_TO_DOCKER_VOLUMES_FOLDER> # A folder on your system to store bind mounts for Docker containers.
+    ```shell
+    docker_volumes/
+    ├── Adguard/
+    │   ├── config/
+    │   └── work/
     ```  
 
-3. Open a terminal in the directory containing the docker-compose file.  
-4. Create a docker network for the container:  
+3. Change the ```.env``` file properties for your configuration:  
+
+    ```properties
+    DOCKER_VOLUMES=<PATH_TO_DOCKER_VOLUMES_FOLDER> # The folder created in the previous step.
+    ```  
+
+4. Open a terminal in the directory containing the docker-compose file.  
+5. Create a docker network for the container:  
 
     ```shell
     docker network create Adguard
     ```  
 
-5. Start the container:  
+6. Start the container:  
 
     ```shell
     docker compose up -d
