@@ -28,7 +28,7 @@ A sample Docker Compose file and brief advice for Adguard Home.
     │   └── work/
     ```  
 
-3. Change the ```.env``` file properties for your configuration:  
+3. Change the `.env` file properties for your configuration:  
 
     ```properties
     DOCKER_VOLUMES=<PATH_TO_DOCKER_VOLUMES_FOLDER> # The folder created in the previous step.
@@ -53,15 +53,15 @@ Your container should be up and running and your Adguard Home Dashboard will be 
 
 Getting your modern Android device to use your Adguard Home instance as its DNS server can be trickier than you'd expect. Here are some steps you can take to ensure your Android device uses your Adguard Home instance as its DNS server.  
 
-* Disable Private DNS (Usually found under ```Settings -> Network & Internet -> Private DNS -> Off```)  
-* Disable Secure DNS in your browser (Usually found under ```Browser settings -> Privacy & Security -> Secure DNS -> Off```)  
-* ```Reserve an IP address``` in your router's management interface for your device. Connect it to your network with the Privacy option set to ```Use device MAC```, the static IP address set, and the local IP address of your Adguard Home instance as the DNS server.  
-* ```Disable any IPv6 DNS Relay``` on your router if one exists. Disabling IPV6 entirely is also an option.  
+* Disable Private DNS (Usually found under `Settings -> Network & Internet -> Private DNS -> Off`)  
+* Disable Secure DNS in your browser (Usually found under `Browser settings -> Privacy & Security -> Secure DNS -> Off`)  
+* `Reserve an IP address` in your router's management interface for your device. Connect it to your network with the Privacy option set to `Use device MAC`, the static IP address set, and the local IP address of your Adguard Home instance as the DNS server.  
+* `Disable any IPv6 DNS Relay` on your router if one exists. Disabling IPV6 entirely is also an option.  
 * If none of the above steps work, a non-ideal workaround is to use an app from the Google Play Store that connects your phone to a dummy (local) VPN that enforces the DNS settings of your choosing.  
 
 ## What I use Adguard Home for  
 
-Most people use Adguard Home to block ads, I personally can't keep up with investigating and unblocking hosts when I run into issues browsing the web caused by Adguard blocks. My home router doesn't support NAT loopback, and my sites are proxied by Cloudflare so I use Adguard Home for its DNS Rewrites feature to allow me to internally resolve and access services hosted on ```my.domain.com```. This increases speeds accessing my sites on my LAN since my requests don't route through Cloudflare and back. I simply setup my devices to use Adguard Home as their DNS server, and then create a wildcard record for ```*.domain.com``` to the IP address of my reverse proxy.  
+Most people use Adguard Home to block ads, I personally can't keep up with investigating and unblocking hosts when I run into issues browsing the web caused by Adguard blocks. My home router doesn't support NAT loopback, and my sites are proxied by Cloudflare so I use Adguard Home for its DNS Rewrites feature to allow me to internally resolve and access services hosted on `my.domain.com`. This increases speeds accessing my sites on my LAN since my requests don't route through Cloudflare and back. I simply setup my devices to use Adguard Home as their DNS server, and then create a wildcard record for `*.domain.com` to the IP address of my reverse proxy.  
 
 ## License  
 
