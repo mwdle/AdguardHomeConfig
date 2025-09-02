@@ -1,3 +1,4 @@
+name: Adguard
 services:
   Adguard:
     image: adguard/adguardhome:latest
