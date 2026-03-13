@@ -19,4 +19,5 @@ networks:
     name: Adguard
     external: true
 
-volumes: adguard_work
+volumes:
+  adguard_work:
