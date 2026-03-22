@@ -1,7 +1,7 @@
 name: Adguard
 services:
   Adguard:
-    image: adguard/adguardhome:latest
+    image: adguard/adguardhome:v0.107.73
     container_name: Adguard
     restart: unless-stopped
     hostname: adguard
