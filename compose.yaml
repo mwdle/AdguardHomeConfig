@@ -18,9 +18,17 @@ services:
     read_only: true
     security_opt:
       - no-new-privileges:true
+    cap_drop:
+      - ALL
 
     logging:
       driver: "journald"
+    healthcheck:
+      test: "/bin/netstat -pant | /bin/grep 53"
+      interval: 1m
+      timeout: 15s
+      retries: 3
+      start_period: 30s
 
 # Assumes you have already created a Docker Network called 'Adguard' (ex 'docker network create Adguard'). See the README for more information.
 networks:
