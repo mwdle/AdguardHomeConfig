@@ -26,9 +26,9 @@ services:
     logging:
       driver: "journald"
     healthcheck:
-      test: "/bin/netstat -pant | /bin/grep 53"
+      test: ["CMD-SHELL", "netstat -tuln | grep ':53 ' >/dev/null || exit 1"]
       interval: 1m
-      timeout: 15s
+      timeout: 10s
       retries: 3
       start_period: 30s
 
