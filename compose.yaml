@@ -18,6 +18,9 @@ services:
     security_opt:
       - no-new-privileges:true
 
+    logging:
+      driver: "journald"
+
 # Assumes you have already created a Docker Network called 'Adguard' (ex 'docker network create Adguard'). See the README for more information.
 networks:
   Adguard:
