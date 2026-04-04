@@ -15,6 +15,7 @@ services:
       - ${DOCKER_VOLUMES}/Adguard:/opt/adguardhome/conf
 
     user: "${UID}:${GID}"
+    read_only: true
     security_opt:
       - no-new-privileges:true
 
