@@ -32,6 +32,13 @@ services:
       retries: 3
       start_period: 30s
 
+    deploy:
+      resources:
+        limits:
+          cpus: 0.25
+          memory: 128M
+          pids: 20
+
 # Assumes you have already created a Docker Network called 'Adguard' (ex 'docker network create Adguard'). See the README for more information.
 networks:
   Adguard:
